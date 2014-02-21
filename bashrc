@@ -53,7 +53,7 @@ set -o vi
 
 export PATH=$HOME/local/bin:/opt/lh/bin:$PATH
 export EDITOR=vim
-#export PROMPT_COMMAND='history -a;export_history.sh'
+export PROMPT_COMMAND='history -a;export_history.sh'
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/local/bin # Add local bin path
 PATH=$PATH:/opt/vagrant/bin # Add local bin path
@@ -81,8 +81,16 @@ alias gb='git checkout'
 alias gc='git commit -m'
 alias ft='grep -R TODO ~/todos'
 
+shopt -s dirspell
+shopt -s cdspell
+
 source ~/bash/prompt.sh
 source ~/bash/aliases/git_aliases.bash
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-chruby ruby-2.0.0-p247
+source ~/bash/aliases/virtualbox.bash
+#source /usr/local/share/chruby/chruby.sh
+#source /usr/local/share/chruby/auto.sh
+
+# Default ruby
+# chruby ruby-2.0.0-p247
+
+PATH=/usr/local/bin:$PATH
