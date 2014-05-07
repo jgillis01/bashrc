@@ -33,7 +33,7 @@ set -o vi
 
 export EDITOR=vim
 
-export PROMPT_COMMAND='history -a;export_history.sh'
+export PROMPT_COMMAND=''
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -66,6 +66,10 @@ fi
 source $HOME/bash/aliases/ls_aliases.bash
 source $HOME/bash/aliases/git_aliases.bash
 source $HOME/bash/aliases/virtualbox.bash
+source /usr/share/git/completion/git-completion.bash
 
 # Update PATH
 PATH=$HOME/local/bin:/usr/local/bin:$PATH
+export CDPATH=$HOME/Development
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
