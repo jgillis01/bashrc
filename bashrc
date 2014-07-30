@@ -35,15 +35,6 @@ export EDITOR=vim
 
 export PROMPT_COMMAND=''
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -F -h --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -59,17 +50,13 @@ shopt -s dirspell
 source $HOME/bash/prompt.sh
 
 # Alias definitions
-if [ -f $HOME/bash/aliases/bash_aliases.bash ]; then
-    . $HOME/bash/aliases/bash_aliases.bash
-fi
+for i in $(ls $HOME/bash/aliases); do source "$HOME/bash/aliases/$i"; done
 
-source $HOME/bash/aliases/ls_aliases.bash
-source $HOME/bash/aliases/git_aliases.bash
-source $HOME/bash/aliases/virtualbox.bash
-source /usr/share/git/completion/git-completion.bash
+# ENV variables
+for i in $(ls $HOME/bash/variables); do source "$HOME/bash/variables/$i"; done
 
 # Update PATH
 PATH=$HOME/local/bin:/usr/local/bin:$PATH
-export CDPATH=$HOME/Development
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export CDPATH=$HOME/Development
