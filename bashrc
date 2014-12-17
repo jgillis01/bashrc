@@ -55,6 +55,9 @@ for i in $(ls $HOME/bash/aliases); do source "$HOME/bash/aliases/$i"; done
 # ENV variables
 for i in $(ls $HOME/bash/variables); do source "$HOME/bash/variables/$i"; done
 
+# Completions
+for i in $(ls $HOME/bash/completions); do source "$HOME/bash/completions/$i"; done
+
 # Update PATH
 PATH=$HOME/local/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
