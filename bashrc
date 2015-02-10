@@ -33,7 +33,7 @@ set -o vi
 
 export EDITOR=vim
 
-export PROMPT_COMMAND=''
+export PROMPT_COMMAND="history -a && ${HOME}/local/bin/history_log"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
