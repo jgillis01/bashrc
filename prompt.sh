@@ -39,4 +39,4 @@ GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
-PS1='\n\[${BOLD}\]\[${ORANGE}\]\h \[${BLUE}\]\w\n\[${RESET}\]$(__git_ps1 "(%s) ")\[${RESET}\]\[${RED}\]${ARROW}\[${RESET}\] '
+PS1='\n\[${BOLD}\]\[${ORANGE}\]\h \[${PURPLE}\]\w\n\[${RESET}\]$(__git_ps1 "(%s) ")\[${RESET}\]\[${RED}\]${ARROW}\[${RESET}\] '

@@ -32,6 +32,8 @@ alias ggs="gg --stat"
 alias gsl="git shortlog -sn"
 alias gw="git whatchanged"
 
+alias watch_pr="watch -n 60 'hub ci-status -v'"
+
 if [ -z "$EDITOR" ]; then
     case $OSTYPE in
       linux*)
